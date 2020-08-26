@@ -2,6 +2,7 @@ import Data.Array.Unboxed
 import Data.Array.ST
 import Control.Monad
 import Control.Monad.ST
+import Data.STRef
 
 
 -- create a large list
