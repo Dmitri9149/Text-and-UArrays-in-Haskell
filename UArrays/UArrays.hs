@@ -30,4 +30,22 @@ aLargeArray = array (0,9999999) []
 -- (0.01 secs, 58,936 bytes)
 -- *Main> 
 
+aLargeListDoubled :: [Int]
+aLargeListDoubled = map (*2) aLargeList
+
+-- GHCi, version 8.6.5: http://www.haskell.org/ghc/  :? for help
+-- Prelude> :l UArrays.hs
+-- [1 of 1] Compiling Main             ( UArrays.hs, interpreted )
+-- Ok, one module loaded.
+-- *Main> :set +s
+-- *Main> length aLargeListDoubled
+-- 10000000
+-- (7.56 secs, 1,680,064,952 bytes)
+-- *Main> length aLargeListDoubled
+-- 10000000
+-- (0.26 secs, 63,960 bytes)
+-- *Main> 
+
+
+
 
