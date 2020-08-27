@@ -133,6 +133,28 @@ swapST (x,y) = runST $ do
    yfinal <- readSTRef y'
    return (xfinal,yfinal)
 
-main :: IO() 
-main = return()
+-- main :: IO() 
+-- main = return()
 
+
+bubbleSort :: UArray Int Int -> UArray Int Int
+bubbleSort myArray = runSTUArray $ do 
+    stArray <- thaw myArray 
+    let end = (snd . bounds) myArray
+    forM_ [1 .. end] $ \i -> do 
+      forM_ [0 .. (end - i)]  $ \j -> do 
+        val <- readArray stArray j 
+        nextVal <- readArray stArray (j + 1)
+        let outOfOrder = val < nextVal 
+        when outOfOrder $ do
+          writeArray stArray j nextVal
+          writeArray stArray (j +1) val 
+    return stArray
+
+-- GHCi, version 8.6.5: http://www.haskell.org/ghc/  :? for help
+-- Prelude> :l UArrays.hs
+-- [1 of 1] Compiling Main             ( UArrays.hs, interpreted )
+-- Ok, one module loaded.
+-- *Main> bubbleSort $ listToUArray [1,2,4,5,6,67,8945, 8976897,12,8]
+-- array (0,9) [(0,8976897),(1,8945),(2,67),(3,12),(4,8),(5,6),(6,5),(7,4),(8,2),(9,1)]
+-- *Main> 
