@@ -68,5 +68,3 @@ myLines text = T.splitOn "\n" text
 myUnLines :: [T.Text] -> T.Text
 myUnLines textLines = T.intercalate "\n" textLines
 
-
-
