@@ -6,9 +6,6 @@ import Data.Semigroup
 
 -- some goog functions from the Module
 
-T.pack :: String -> T.Text
-T.unpack :: T.text -> String 
-
 firstWord :: String
 firstWord = "optimizm"
 
@@ -51,9 +48,9 @@ onSplit = T.splitOn breakText exampleText
 -- intercolate, unwords, unlines
 
 unWords = T.unwords (T.words sampleInput) 
-unlines = T.lines (T.lines sampleInput) 
+unlines = T.unlines (T.lines sampleInput) 
 
-reverse = T.intercalate breackText (T.splitOn breackText exampleText) 
+reverse = T.intercalate breakText (T.splitOn breakText exampleText) 
 
 
 combinedTextMonoid :: T.Text
