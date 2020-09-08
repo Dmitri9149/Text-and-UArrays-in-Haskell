@@ -1,3 +1,4 @@
+-- from: https://gist.github.com/willkurt/4bced09adc2ff9e7ee366b7ad681cac6
 धर्म
 
 श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्।

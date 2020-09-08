@@ -12,7 +12,8 @@ highlight query fullText = T.intercalate highlighted pieces
 
 dharma :: T.Text
 --dharma = "धर्मः"
-dharma = " "
+dharma = "धर्म"
+
 
 --fullText :: T.Text
 --fullText = 
